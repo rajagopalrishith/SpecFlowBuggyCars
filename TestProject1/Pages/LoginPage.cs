@@ -19,6 +19,8 @@ namespace BuggyProject.Pages
             Driver = driver;
         }
 
+        //Login Page Fields
+
         private readonly By loginusernamefield = By.XPath("//input[contains(@name,'login')]");
 
         private readonly By loginpasswordfield = By.XPath("//input[contains(@name,'password')]");
@@ -27,6 +29,8 @@ namespace BuggyProject.Pages
 
         private readonly By ProfileLink  = By.XPath("//a[contains(.,'Profile')]");
 
+
+        //Login Page Methods
         public void CloseApplication()
 
         {
