@@ -7,4 +7,10 @@ Nuget Packets Installed
 
 Notes
 
-Base Classes have been written for Selenium Methods. Step Defenitions for the Whole Project have been kept Generic whereas Pages have been separated. Drivers are Instantiated using Before Scenario Hooks and Diposed using [After Scenario] blocks. All scenarios to automate are kept as a Single Feature File
+Base Classes have been written for Selenium Methods. Step Defenitions for the Whole Project have been kept Generic whereas Pages have been separated. Drivers are Instantiated using Before Scenario Hooks and Diposed using [After Scenario] blocks. 
+
+All scenarios to automate are kept as 4 Different Features
+1.EndToEnd
+2.Login
+3.Registration
+4.Voting
