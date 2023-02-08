@@ -85,10 +85,12 @@ testRunner.Given("I open the buggy application home page", ((string)(null)), ((T
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with password length not satisfied")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithPasswordLengthNotSatisfied()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with password length not satisfied", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
@@ -128,7 +130,7 @@ this.FeatureBackground();
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "errormessage"});
                 table4.AddRow(new string[] {
-                            "InvalidParameter: 1 validation error(s) found. - minimum field size of 6, SignUpI" +
+                            "InvalidParameter: 1 validation error(s) found. - minimum field size of 8, SignUpI" +
                                 "nput.Password."});
 #line 15
  testRunner.And("I validate the following error message as below", ((string)(null)), table4, "And ");
@@ -140,10 +142,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with passwords not matching")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithPasswordsNotMatching()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with passwords not matching", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 23
@@ -187,10 +191,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate successful registration for an user")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateSuccessfulRegistrationForAnUser()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate successful registration for an user", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 33
@@ -225,10 +231,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with existing username")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithExistingUsername()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with existing username", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 42
@@ -279,10 +287,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with no Uppercase in password field")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithNoUppercaseInPasswordField()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with no Uppercase in password field", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 54
@@ -334,10 +344,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with no Lowercase in password field")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithNoLowercaseInPasswordField()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with no Lowercase in password field", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 66
@@ -389,10 +401,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate registration with no special characters in password field")]
         [NUnit.Framework.CategoryAttribute("registration")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
         public void ValidateRegistrationWithNoSpecialCharactersInPasswordField()
         {
             string[] tagsOfScenario = new string[] {
-                    "registration"};
+                    "registration",
+                    "PasswordPolicy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate registration with no special characters in password field", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 78
@@ -436,6 +450,276 @@ this.FeatureBackground();
                                 "e symbol characters"});
 #line 84
  testRunner.And("I validate the following error message as below", ((string)(null)), table13, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Password Policy Checks : Validate registration for password length = 8")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
+        [NUnit.Framework.TestCaseAttribute("11111111", null)]
+        [NUnit.Framework.TestCaseAttribute("AAAAAAAA", null)]
+        [NUnit.Framework.TestCaseAttribute("eeeeeeee", null)]
+        [NUnit.Framework.TestCaseAttribute("Password", null)]
+        [NUnit.Framework.TestCaseAttribute("@@@@@@@@", null)]
+        [NUnit.Framework.TestCaseAttribute("SPECIA@L", null)]
+        [NUnit.Framework.TestCaseAttribute("aaaa@@@@", null)]
+        public void PasswordPolicyChecksValidateRegistrationForPasswordLength8(string password, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "PasswordPolicy"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Password Policy Checks : Validate registration for password length = 8", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 90
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 91
+ testRunner.Given("I navigate to application registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "login",
+                            "FirstName",
+                            "LastName",
+                            "Password",
+                            "ConfirmPassword"});
+                table14.AddRow(new string[] {
+                            "john",
+                            "john",
+                            "derek",
+                            string.Format("{0}", password),
+                            string.Format("{0}", password)});
+#line 92
+ testRunner.Then("I fill registration fields as below", ((string)(null)), table14, "Then ");
+#line hidden
+#line 95
+ testRunner.Then("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 96
+ testRunner.And("I validate password policy breach message is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Password Policy Checks : Validate registration for password length = 7")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
+        [NUnit.Framework.TestCaseAttribute("1111111", null)]
+        [NUnit.Framework.TestCaseAttribute("AAAAAAA", null)]
+        [NUnit.Framework.TestCaseAttribute("eeeeeee", null)]
+        [NUnit.Framework.TestCaseAttribute("Passwor", null)]
+        [NUnit.Framework.TestCaseAttribute("@@@@@@@", null)]
+        [NUnit.Framework.TestCaseAttribute("SPECIA@", null)]
+        [NUnit.Framework.TestCaseAttribute("aaaa@@@", null)]
+        [NUnit.Framework.TestCaseAttribute("Specil@", null)]
+        public void PasswordPolicyChecksValidateRegistrationForPasswordLength7(string password, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "PasswordPolicy"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Password Policy Checks : Validate registration for password length = 7", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 110
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 111
+ testRunner.Given("I navigate to application registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "login",
+                            "FirstName",
+                            "LastName",
+                            "Password",
+                            "ConfirmPassword"});
+                table15.AddRow(new string[] {
+                            "john",
+                            "john",
+                            "derek",
+                            string.Format("{0}", password),
+                            string.Format("{0}", password)});
+#line 112
+ testRunner.Then("I fill registration fields as below", ((string)(null)), table15, "Then ");
+#line hidden
+#line 115
+ testRunner.Then("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 116
+ testRunner.And("I validate password policy breach message is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Password Policy Checks : Validate registration for password length = 9")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
+        [NUnit.Framework.TestCaseAttribute("111111111", null)]
+        [NUnit.Framework.TestCaseAttribute("AAAAAAAAA", null)]
+        [NUnit.Framework.TestCaseAttribute("eeeeeeeee", null)]
+        [NUnit.Framework.TestCaseAttribute("Passwords", null)]
+        [NUnit.Framework.TestCaseAttribute("@@@@@@@@@", null)]
+        [NUnit.Framework.TestCaseAttribute("SPECIA@LS", null)]
+        [NUnit.Framework.TestCaseAttribute("aaaa@@@@a", null)]
+        [NUnit.Framework.TestCaseAttribute("Special@1", null)]
+        public void PasswordPolicyChecksValidateRegistrationForPasswordLength9(string password, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "PasswordPolicy"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Password Policy Checks : Validate registration for password length = 9", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 130
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 131
+ testRunner.Given("I navigate to application registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                            "login",
+                            "FirstName",
+                            "LastName",
+                            "Password",
+                            "ConfirmPassword"});
+                table16.AddRow(new string[] {
+                            "john",
+                            "john",
+                            "derek",
+                            string.Format("{0}", password),
+                            string.Format("{0}", password)});
+#line 132
+ testRunner.Then("I fill registration fields as below", ((string)(null)), table16, "Then ");
+#line hidden
+#line 135
+ testRunner.Then("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 136
+ testRunner.And("I validate password policy breach message is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Password Policy Checks : Validate Different Combinations of special characters")]
+        [NUnit.Framework.CategoryAttribute("PasswordPolicy")]
+        [NUnit.Framework.TestCaseAttribute("Special~1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special!1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special#1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special@1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special$1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special%1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special^1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special&1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special*1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special(1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special)1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special-1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special+1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special=1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special{1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special}1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special[1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special]1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special/1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special\\1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special<1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special>1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special[1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special]1", null)]
+        [NUnit.Framework.TestCaseAttribute("Special?1", null)]
+        public void PasswordPolicyChecksValidateDifferentCombinationsOfSpecialCharacters(string password, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "PasswordPolicy"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Password Policy Checks : Validate Different Combinations of special characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 151
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 152
+ testRunner.Given("I navigate to application registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "Password",
+                            "ConfirmPassword"});
+                table17.AddRow(new string[] {
+                            "john",
+                            "derek",
+                            string.Format("{0}", password),
+                            string.Format("{0}", password)});
+#line 153
+ testRunner.Then("I fill registration fields with random username", ((string)(null)), table17, "Then ");
+#line hidden
+#line 156
+ testRunner.Then("I click register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 157
+ testRunner.And("I Validate registration is successfull", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

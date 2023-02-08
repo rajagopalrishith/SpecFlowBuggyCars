@@ -103,14 +103,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
   testRunner.Given("I open the buggy application home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "login",
                             "password"});
-                table14.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             string.Format("{0}", login),
                             string.Format("{0}", password)});
 #line 8
-  testRunner.When("I fill in login Information", ((string)(null)), table14, "When ");
+  testRunner.When("I fill in login Information", ((string)(null)), table18, "When ");
 #line hidden
 #line 11
   testRunner.Then("I click login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

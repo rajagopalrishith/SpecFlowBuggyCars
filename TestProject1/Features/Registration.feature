@@ -5,7 +5,7 @@ Background:
 Given I open the buggy application home page
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with password length not satisfied
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -14,12 +14,12 @@ Scenario: Validate registration with password length not satisfied
 	Then I click register button
 	And I validate the following error message as below
 	| errormessage                                                                                                |
-	| InvalidParameter: 1 validation error(s) found. - minimum field size of 6, SignUpInput.Password.             |
+	| InvalidParameter: 1 validation error(s) found. - minimum field size of 8, SignUpInput.Password.             |
 
 
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with passwords not matching
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -29,7 +29,7 @@ Scenario: Validate registration with passwords not matching
 
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate successful registration for an user
 	Given I navigate to application registration
 	Then I fill registration fields with random values
@@ -38,7 +38,7 @@ Scenario: Validate successful registration for an user
 
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with existing username
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -50,7 +50,7 @@ Scenario: Validate registration with existing username
 	| UsernameExistsException: User already exists             |
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with no Uppercase in password field
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -62,7 +62,7 @@ Scenario: Validate registration with no Uppercase in password field
 	| InvalidPasswordException: Password did not conform with policy: Password must have uppercase characters            |
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with no Lowercase in password field
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -74,7 +74,7 @@ Scenario: Validate registration with no Lowercase in password field
 	| InvalidPasswordException: Password did not conform with policy: Password must have lowercase characters            |
 
 
-@registration
+@registration @PasswordPolicy
 Scenario: Validate registration with no special characters in password field
 	Given I navigate to application registration
 	Then I fill registration fields as below
@@ -84,6 +84,106 @@ Scenario: Validate registration with no special characters in password field
 	And I validate the following error message as below
 	| errormessage                                                                                                    |
 	| InvalidPasswordException: Password did not conform with policy: Password must have symbol characters            |
+
+
+@PasswordPolicy
+Scenario: Password Policy Checks : Validate registration for password length = 8 
+	Given I navigate to application registration
+	Then I fill registration fields as below
+	| login        | FirstName        |   LastName        |   Password                |    ConfirmPassword              |
+	|  john        |  john            |    derek          |   <Password>              |     <Password>                  |
+	Then I click register button
+	And I validate password policy breach message is shown
+
+Examples: 
+| Password |
+| 11111111 |
+| AAAAAAAA |
+| eeeeeeee |
+| Password |
+| @@@@@@@@ |
+| SPECIA@L |
+| aaaa@@@@ |
+
+
+@PasswordPolicy
+Scenario: Password Policy Checks : Validate registration for password length = 7 
+	Given I navigate to application registration
+	Then I fill registration fields as below
+	| login        | FirstName        |   LastName        |   Password                |    ConfirmPassword              |
+	|  john        |  john            |    derek          |   <Password>              |     <Password>                  |
+	Then I click register button
+	And I validate password policy breach message is shown
+
+Examples: 
+| Password |
+| 1111111  |
+| AAAAAAA  |
+| eeeeeee  |
+| Passwor  |
+| @@@@@@@  |
+| SPECIA@  |
+| aaaa@@@  |
+| Specil@  |
+
+@PasswordPolicy
+Scenario: Password Policy Checks : Validate registration for password length = 9 
+	Given I navigate to application registration
+	Then I fill registration fields as below
+	| login        | FirstName        |   LastName        |   Password                |    ConfirmPassword              |
+	|  john        |  john            |    derek          |   <Password>              |     <Password>                  |
+	Then I click register button
+	And I validate password policy breach message is shown
+
+Examples: 
+| Password    |
+| 111111111   |
+| AAAAAAAAA   |
+| eeeeeeeee   |
+| Passwords   |
+| @@@@@@@@@   |
+| SPECIA@LS   |
+| aaaa@@@@a   |
+| Special@1   |
+
+
+@PasswordPolicy
+Scenario: Password Policy Checks : Validate Different Combinations of special characters
+	Given I navigate to application registration
+	Then I fill registration fields with random username
+       | FirstName        |   LastName        |   Password                |    ConfirmPassword              |
+       |  john            |    derek          |   <Password>              |     <Password>                  |
+	Then I click register button
+	And I Validate registration is successfull
+
+Examples: 
+| Password    |
+| Special~1   |
+| Special!1   |
+| Special#1   |
+| Special@1   |
+| Special$1   |
+| Special%1   |
+| Special^1   |
+| Special&1   |
+| Special*1   |
+| Special(1   |
+| Special)1   |
+| Special-1   |
+| Special+1   |
+| Special=1   |
+| Special{1   |
+| Special}1   |
+| Special[1   |
+| Special]1   |
+| Special/1   |
+| Special\1   |
+| Special<1   |
+| Special>1   |
+| Special[1   |
+| Special]1   |
+| Special?1   |
+
 	
 
 

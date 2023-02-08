@@ -10,6 +10,7 @@ using SpecFlowBuggy.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -226,12 +227,66 @@ namespace BuggyProject.Steps
                 Assert.AreEqual(expectederrormessage,actualerrormessage, "errormessage not found");
             }
         }
+        [Then(@"I validate password policy breach message is shown")]
+        public void ThenIValidatePasswordPolicyBreachMessageIsShown()
+        {
+            Assert.IsTrue(_RegistrationPage.isGenericValidationMessageFound(), "Validation message is not found");
+        }
 
 
         [Then(@"I validate error message for the condition ([^']*)")]
         public void ThenIValidateErrorMessageForTheCondition(string text)
         {
             Assert.IsTrue(_RegistrationPage.isValidationMessageFound(text), "validation message not found");
+        }
+        [Then(@"I fill registration fields with random username")]
+        public void ThenIFillRegistrationFieldsWithRandomUsername(Table table)
+        {
+            foreach (var item in table.Rows)
+
+            {
+                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                var stringChars = new char[8];
+                var random = new Random();
+
+                for (int i = 0; i < stringChars.Length; i++)
+                {
+                    stringChars[i] = chars[random.Next(chars.Length)];
+                }
+                var finalString = new String(stringChars);
+                var login = finalString;
+               
+                string firstname = item.GetString("FirstName");
+                string lastname = item.GetString("LastName");
+                string password = item.GetString("Password");
+                string confirmpassword = item.GetString("ConfirmPassword");
+                if (login != null && login != string.Empty)
+                {
+                    _RegistrationPage.EnterLogin(login);
+                    System.Threading.Thread.Sleep(2000);
+                }
+                if (firstname != null && firstname != string.Empty)
+                {
+                    _RegistrationPage.EnterFirstname(firstname);
+                    System.Threading.Thread.Sleep(2000);
+                }
+                if (lastname != null && lastname != string.Empty)
+                {
+                    _RegistrationPage.EnterLastname(lastname);
+                    System.Threading.Thread.Sleep(2000);
+                }
+                if (password != null && password != string.Empty)
+                {
+                    _RegistrationPage.EnterPassword(password);
+                    System.Threading.Thread.Sleep(2000);
+                }
+                if (confirmpassword != null && confirmpassword != string.Empty)
+                {
+                    _RegistrationPage.EnterConfirmPassword(confirmpassword);
+                    System.Threading.Thread.Sleep(2000);
+                }
+
+            }
         }
 
 

@@ -103,5 +103,10 @@ namespace SpecFlowBuggy.Pages
         {
             return IsElementDisplayed(validationprompt(message));
         }
+
+        public bool isGenericValidationMessageFound()
+        { 
+            return IsElementDisplayed(validationerrormessage);
+        }
     }
 }
